@@ -16,5 +16,5 @@ The portfolio is in development and will grow as real projects are completed.
 
 ## Profile Links
 - GitHub: https://github.com/lissuin
-- LinkedIn: https://www.linkedin.com/in/zeynep-ataca-a43395437/
-- Email: zeynataca@gmail.com
+- LinkedIn: https://www.linkedin.com/in/zeynepataca/
+- Email: zeynepataca1@gmail.com
