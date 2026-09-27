@@ -20,13 +20,11 @@
 
   <header class="nav-wrap">
     <a class="brand" href="#home">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 42 42" role="img">
-          <circle cx="21" cy="21" r="18" class="mark-ring"/>
-          <path d="M21 28 C19 23 19 19 21 13" class="mark-stem"/>
-          <path d="M21 14 C15 11 12 14 13 18 C15 20 18 19 21 14Z" class="mark-petal"/>
-          <path d="M22 15 C27 10 31 12 30 16 C29 19 26 19 22 15Z" class="mark-petal"/>
-          <circle cx="21" cy="20" r="2.3" class="mark-center"/>
+      <span class="brand-bloom" aria-hidden="true">
+        <svg viewBox="0 0 42 42">
+          <path d="M21 36 C20.5 30 20.5 25 21 20" class="logo-stem"/>
+          <path d="M21 20 C15 18 11 14 12 10 C16 9 20 12 21 17 C22 12 26 9 30 10 C31 14 27 18 21 20Z" class="logo-flower"/>
+          <circle cx="21" cy="20" r="1.6" class="logo-core"/>
         </svg>
       </span>
       <span class="brand-word">Lissuin</span>
@@ -61,27 +59,58 @@
       </div>
 
       <div class="hero-art reveal">
-        <div class="halo"></div>
-        <div class="bud-stage">
-          <div class="flower-progress" aria-hidden="true">01 / 08</div>
-          <button class="lissuin-flower bloom-stage-1" id="lissuinFlower" aria-label="Bloom the Lissuin flower" aria-pressed="false">
-            <span class="petal p1"></span>
-            <span class="petal p2"></span>
-            <span class="petal p3"></span>
-            <span class="petal p4"></span>
-            <span class="petal p5"></span>
-            <span class="petal p6"></span>
-            <span class="petal p7"></span>
-            <span class="petal p8"></span>
-            <span class="bud-core"></span>
-            <span class="flower-center"></span>
-            <span class="glow"></span>
+        <div class="flower-composition">
+          <div class="flower-caption">
+            <span>THE LISSUIN BLOOM</span>
+            <b id="bloomProgress">01 / 08</b>
+          </div>
+
+          <button class="lissuin-flower" id="lissuinFlower" aria-label="Bloom the Lissuin flower" aria-pressed="false">
+            <svg viewBox="0 0 320 390" role="img" aria-hidden="true">
+              <defs>
+                <linearGradient id="petalFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#f1f2ec"/>
+                  <stop offset="66%" stop-color="#d6ddd2"/>
+                  <stop offset="100%" stop-color="#bcc7b8"/>
+                </linearGradient>
+                <linearGradient id="budFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#879783"/>
+                  <stop offset="100%" stop-color="#596954"/>
+                </linearGradient>
+                <radialGradient id="coreFill">
+                  <stop offset="0%" stop-color="#ddc28e"/>
+                  <stop offset="100%" stop-color="#a98651"/>
+                </radialGradient>
+                <filter id="bloomGlow" x="-100%" y="-100%" width="300%" height="300%">
+                  <feGaussianBlur stdDeviation="12"/>
+                </filter>
+              </defs>
+
+              <path class="flower-stem-art" d="M160 349 C157 306 157 268 160 224" />
+              <path class="flower-leaf-art left" d="M158 284 C132 270 111 271 95 282 C113 295 136 299 158 291Z" />
+              <path class="flower-leaf-art right" d="M159 259 C183 244 203 246 218 257 C201 269 180 269 159 267Z" />
+
+              <g class="petal-layer">
+                <path class="petal-art p1" d="M160 226 C143 206 136 174 143 141 C148 118 158 100 160 79 C184 100 193 130 185 157 C180 179 169 203 160 226Z"/>
+                <path class="petal-art p2" d="M160 226 C143 206 136 174 143 141 C148 118 158 100 160 79 C184 100 193 130 185 157 C180 179 169 203 160 226Z"/>
+                <path class="petal-art p3" d="M160 226 C143 206 136 174 143 141 C148 118 158 100 160 79 C184 100 193 130 185 157 C180 179 169 203 160 226Z"/>
+                <path class="petal-art p4" d="M160 226 C143 206 136 174 143 141 C148 118 158 100 160 79 C184 100 193 130 185 157 C180 179 169 203 160 226Z"/>
+                <path class="petal-art p5" d="M160 226 C143 206 136 174 143 141 C148 118 158 100 160 79 C184 100 193 130 185 157 C180 179 169 203 160 226Z"/>
+                <path class="petal-art p6" d="M160 226 C143 206 136 174 143 141 C148 118 158 100 160 79 C184 100 193 130 185 157 C180 179 169 203 160 226Z"/>
+                <path class="petal-art p7" d="M160 226 C143 206 136 174 143 141 C148 118 158 100 160 79 C184 100 193 130 185 157 C180 179 169 203 160 226Z"/>
+                <path class="petal-art p8" d="M160 226 C143 206 136 174 143 141 C148 118 158 100 160 79 C184 100 193 130 185 157 C180 179 169 203 160 226Z"/>
+              </g>
+
+              <path class="bud-shield" d="M160 244 C136 231 132 205 146 185 C153 175 161 169 160 154 C178 173 188 197 182 218 C178 232 168 241 160 244Z"/>
+              <circle class="flower-core" cx="160" cy="224" r="10"/>
+              <circle class="flower-glow" cx="160" cy="224" r="26"/>
+            </svg>
           </button>
-          <p class="flower-hint"><span>Click the flower</span><b>each touch opens a new petal</b></p>
-        </div>
-        <div class="floating-note">
-          <span>Currently learning</span>
-          <strong>Python · HTML/CSS · Linux</strong>
+
+          <div class="flower-hint">
+            <strong id="bloomHint">TIKLA VE AÇ</strong>
+            <span>Her dokunuşta bir taç yaprağı.</span>
+          </div>
         </div>
       </div>
     </section>

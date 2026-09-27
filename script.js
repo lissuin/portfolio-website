@@ -12,20 +12,23 @@ window.addEventListener("scroll", () => {
 }, { passive: true });
 
 const bloomButton = document.getElementById("lissuinFlower");
-const progressLabel = document.querySelector(".flower-progress");
+const progressLabel = document.getElementById("bloomProgress");
+const bloomHint = document.getElementById("bloomHint");
+const petals = bloomButton ? [...bloomButton.querySelectorAll(".petal-art")] : [];
 let stage = 1;
 
 function renderBloom() {
+  if (!bloomButton) return;
   bloomButton.className = `lissuin-flower stage-${stage}`;
   bloomButton.setAttribute("aria-pressed", String(stage === 8));
-  bloomButton.querySelectorAll(".petal").forEach((petal, index) => {
-    petal.classList.toggle("active", index < stage);
-  });
+  petals.forEach((petal, index) => petal.classList.toggle("active", index < stage));
   progressLabel.textContent = `${String(stage).padStart(2, "0")} / 08`;
+  bloomHint.textContent = stage === 8 ? "ÇİÇEK TAMAMLANDI" : "TIKLA VE AÇ";
 }
 
+renderBloom();
+
 if (bloomButton) {
-  renderBloom();
   bloomButton.addEventListener("click", () => {
     stage = stage >= 8 ? 1 : stage + 1;
     renderBloom();
