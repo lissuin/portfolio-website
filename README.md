@@ -12,3 +12,9 @@ A calm botanical visual identity with a custom Lissuin mark, subtle flower detai
 
 ## Status
 The portfolio is in development and will grow as real projects are completed.
+
+
+## Profile Links
+- GitHub: https://github.com/lissuin
+- LinkedIn: https://www.linkedin.com/in/zeynep-ataca-a43395437/
+- Email: zeynataca@gmail.com
