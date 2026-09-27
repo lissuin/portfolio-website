@@ -1,20 +1,35 @@
-# Lissuin — Portfolio
+# Lissuin — Portfolio Website
 
-Personal portfolio website for **Zeynep Ataca (Lissuin)**, an aspiring IT specialist from Türkiye preparing for an IT-Ausbildung in Germany.
+A personal portfolio website created to showcase my projects, technical interests and learning journey while preparing for an IT-Ausbildung in Germany.
 
-## Tech
-- HTML
-- CSS
-- JavaScript
+## Technologies
 
-## Design
-A calm botanical visual identity with a custom Lissuin mark, subtle flower details, responsive layout, lightweight scroll animation and an interactive 8-step bloom.
+* HTML
+* CSS
+* JavaScript
+
+## Features
+
+* Responsive layout
+* Personal portfolio sections
+* Custom visual identity
+* Interactive elements
+* Lightweight animations
+
+## Project Structure
+
+```text
+portfolio-website/
+├── index.html
+├── styles.css
+├── script.js
+└── README.md
+```
 
 ## Status
-The portfolio is in development and will grow as real projects are completed.
 
+In development. The website will continue to evolve as new projects are completed.
 
-## Profile Links
-- GitHub: https://github.com/lissuin
-- LinkedIn: https://www.linkedin.com/in/zeynepataca/
-- Email: zeynepataca1@gmail.com
+## Purpose
+
+This project is part of my hands-on learning process and is used to strengthen my understanding of front-end development, responsive design and JavaScript fundamentals.
