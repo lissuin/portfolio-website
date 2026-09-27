@@ -8,7 +8,7 @@ Personal portfolio website for **Zeynep Ataca (Lissuin)**, an aspiring IT specia
 - JavaScript
 
 ## Design
-A calm botanical visual identity with soft natural tones, subtle floral details, responsive layout, scroll reveals and a clickable blooming flower interaction.
+A calm botanical identity with a custom Lissuin flower mark, delicate details, responsive layout and an interactive bloom animation. The hero flower begins as a bud and opens one petal at a time on click.
 
 ## Status
 The portfolio is in development and will grow as real projects are completed.

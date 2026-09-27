@@ -20,8 +20,14 @@
 
   <header class="nav-wrap">
     <a class="brand" href="#home">
-      <span class="brand-bud" aria-hidden="true">
-        <i></i><i></i><i></i><i></i><b></b>
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 42 42" role="img">
+          <circle cx="21" cy="21" r="18" class="mark-ring"/>
+          <path d="M21 28 C19 23 19 19 21 13" class="mark-stem"/>
+          <path d="M21 14 C15 11 12 14 13 18 C15 20 18 19 21 14Z" class="mark-petal"/>
+          <path d="M22 15 C27 10 31 12 30 16 C29 19 26 19 22 15Z" class="mark-petal"/>
+          <circle cx="21" cy="20" r="2.3" class="mark-center"/>
+        </svg>
       </span>
       <span class="brand-word">Lissuin</span>
     </a>
@@ -57,7 +63,8 @@
       <div class="hero-art reveal">
         <div class="halo"></div>
         <div class="bud-stage">
-          <button class="lissuin-flower" id="lissuinFlower" aria-label="Open the Lissuin flower" aria-pressed="false">
+          <div class="flower-progress" aria-hidden="true">01 / 08</div>
+          <button class="lissuin-flower bloom-stage-1" id="lissuinFlower" aria-label="Bloom the Lissuin flower" aria-pressed="false">
             <span class="petal p1"></span>
             <span class="petal p2"></span>
             <span class="petal p3"></span>
@@ -66,11 +73,11 @@
             <span class="petal p6"></span>
             <span class="petal p7"></span>
             <span class="petal p8"></span>
-            <span class="calyx"></span>
-            <span class="center"></span>
+            <span class="bud-core"></span>
+            <span class="flower-center"></span>
             <span class="glow"></span>
           </button>
-          <p class="flower-hint">click to bloom</p>
+          <p class="flower-hint"><span>Click the flower</span><b>each touch opens a new petal</b></p>
         </div>
         <div class="floating-note">
           <span>Currently learning</span>

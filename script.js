@@ -7,18 +7,27 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
 const header = document.querySelector(".nav-wrap");
-let lastY = window.scrollY;
 window.addEventListener("scroll", () => {
-  const currentY = window.scrollY;
-  header.style.boxShadow = currentY > 10 ? "0 8px 30px rgba(52,61,50,.06)" : "none";
-  lastY = currentY;
+  header.style.boxShadow = window.scrollY > 10 ? "0 8px 30px rgba(52,61,50,.06)" : "none";
 }, { passive: true });
 
-
 const bloomButton = document.getElementById("lissuinFlower");
+const progressLabel = document.querySelector(".flower-progress");
+let stage = 1;
+
+function renderBloom() {
+  bloomButton.className = `lissuin-flower stage-${stage}`;
+  bloomButton.setAttribute("aria-pressed", String(stage === 8));
+  bloomButton.querySelectorAll(".petal").forEach((petal, index) => {
+    petal.classList.toggle("active", index < stage);
+  });
+  progressLabel.textContent = `${String(stage).padStart(2, "0")} / 08`;
+}
+
 if (bloomButton) {
+  renderBloom();
   bloomButton.addEventListener("click", () => {
-    const bloomed = bloomButton.classList.toggle("bloomed");
-    bloomButton.setAttribute("aria-pressed", String(bloomed));
+    stage = stage >= 8 ? 1 : stage + 1;
+    renderBloom();
   });
 }
