@@ -1,36 +1,43 @@
+const petals = [...document.querySelectorAll(".petal")];
+const flower = document.getElementById("flower");
+const title = document.getElementById("bloomTitle");
+const hint = document.getElementById("bloomHint");
+const sub = document.getElementById("bloomSub");
+let count = 0;
+
+function updateBloom() {
+  petals.forEach((petal, index) => {
+    petal.classList.toggle("show", index < count);
+  });
+
+  title.textContent = `LISSUIN BLOOM · ${String(Math.max(count,1)).padStart(2,"0")} / 08`;
+
+  if (count === 0) {
+    hint.textContent = "Click the flower";
+    sub.textContent = "Each touch adds a new petal.";
+  } else if (count < 8) {
+    hint.textContent = count === 1 ? "A first petal." : `${count} petals in bloom.`;
+    sub.textContent = "Keep going — one touch, one petal.";
+  } else {
+    hint.textContent = "The flower is complete.";
+    sub.textContent = "Click again to begin a new bloom.";
+    flower.classList.add("complete");
+  }
+}
+
+flower.addEventListener("click", () => {
+  if (count === 8) {
+    count = 0;
+    flower.classList.remove("complete");
+  } else {
+    count += 1;
+  }
+  updateBloom();
+});
+
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) entry.target.classList.add("visible");
   });
-}, { threshold: 0.12 });
-
-document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-const header = document.querySelector(".nav-wrap");
-window.addEventListener("scroll", () => {
-  header.style.boxShadow = window.scrollY > 10 ? "0 8px 30px rgba(52,61,50,.06)" : "none";
-}, { passive: true });
-
-const bloomButton = document.getElementById("lissuinFlower");
-const progressLabel = document.getElementById("bloomProgress");
-const bloomHint = document.getElementById("bloomHint");
-const petals = bloomButton ? [...bloomButton.querySelectorAll(".petal-art")] : [];
-let stage = 1;
-
-function renderBloom() {
-  if (!bloomButton) return;
-  bloomButton.className = `lissuin-flower stage-${stage}`;
-  bloomButton.setAttribute("aria-pressed", String(stage === 8));
-  petals.forEach((petal, index) => petal.classList.toggle("active", index < stage));
-  progressLabel.textContent = `${String(stage).padStart(2, "0")} / 08`;
-  bloomHint.textContent = stage === 8 ? "ÇİÇEK TAMAMLANDI" : "TIKLA VE AÇ";
-}
-
-renderBloom();
-
-if (bloomButton) {
-  bloomButton.addEventListener("click", () => {
-    stage = stage >= 8 ? 1 : stage + 1;
-    renderBloom();
-  });
-}
+}, {threshold:0.12});
+document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
