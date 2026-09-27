@@ -13,3 +13,12 @@ window.addEventListener("scroll", () => {
   header.style.boxShadow = currentY > 10 ? "0 8px 30px rgba(52,61,50,.06)" : "none";
   lastY = currentY;
 }, { passive: true });
+
+
+const bloomButton = document.getElementById("lissuinFlower");
+if (bloomButton) {
+  bloomButton.addEventListener("click", () => {
+    const bloomed = bloomButton.classList.toggle("bloomed");
+    bloomButton.setAttribute("aria-pressed", String(bloomed));
+  });
+}
